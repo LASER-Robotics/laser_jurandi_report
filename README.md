@@ -1,6 +1,6 @@
 # Apresentação e Objetivos
 
-<video src="./source/_static/jurandi_test_video_2.mp4" controls="controls"></video>
+[![Teste do Catamarã Jurandi](https://img.youtube.com/vi/ryNO8USSduo/maxresdefault.jpg)](https://www.youtube.com/watch?v=ryNO8USSduo)
 
 O projeto **Jurandi** consiste no desenvolvimento de um Veículo de Superfície Autônomo (ASV — *Autonomous Surface Vehicle*) em formato de catamarã. Desenvolvido na Universidade Federal da Paraíba (UFPB) com o apoio financeiro da CAPES, o projeto busca inovar na integração tecnológica entre robótica marinha e aérea.
 
@@ -20,7 +20,7 @@ Construir, integrar e validar o hardware e o software de controle do catamarã J
 
 # Materiais e Componentes
 
-<video src="./source/_static/jurandi_and_drone_1.mp4" controls="controls"></video>
+[![Teste Jurandi com Drone](https://img.youtube.com/vi/8dZGqTz3dco/maxresdefault.jpg)](https://www.youtube.com/watch?v=8dZGqTz3dco)
 
 Para o desenvolvimento do catamarã Jurandi, realizou-se a seleção criteriosa de componentes de hardware e software, visando assegurar a flutuabilidade adequada da embarcação e o processamento computacional robusto exigido para a navegação autônoma.
 ## Estrutura Mecânica 
