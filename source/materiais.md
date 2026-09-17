@@ -30,8 +30,10 @@ Para o desenvolvimento do catamarã Jurandi, realizou-se a seleção criteriosa 
 ![Power Module PM07](./images/bateria_power_module.jpg)
 
 * **Acumulador de Energia:** Bateria de Polímero de Lítio (LiPo) de 4 células (4S - 14.8V nominal) da fabricante Gens Ace. Dimensionada para suportar altas taxas de descarga contínua impostas pelos propulsores marítimos, garantindo a reserva energética necessária para missões de média a longa duração.
+![Módulo de Telemetria](./images/lipo_4s.jpg)
 
 * **Cabeamento e Interconexões de Sinal:** Cabeamento lógico e de potência secundária estruturado com fios isolados em silicone flexível de bitola 22 AWG. Esta especificação assegura elevada resiliência térmica, baixa impedância ôhmica para correntes moderadas e excelente imunidade à fadiga mecânica gerada pela vibração contínua dos motores.
+![Módulo de Telemetria](./images/cabo_silicone.jpg)
 
 * **Rádio Transceptor de Telemetria:** Módulo de RF configurado para o estabelecimento de um link de dados bidirecional criptografado via protocolo MAVLink, permitindo o monitoramento telemétrico e intervenções de controle em tempo real pela Estação de Controle em Solo (GCS).
 ![Módulo de Telemetria](./images/modulo_telemetria.jpg)
@@ -43,9 +45,6 @@ Para o desenvolvimento do catamarã Jurandi, realizou-se a seleção criteriosa 
 ![Motores Brushless](./images/motores_propulsao.jpg)
 
 ### Software e Firmware
-
-* **Firmware de Propulsão:** Firmware BLHeli gravado nos ESCs para viabilizar parametrização avançada. Essencial para ativar a operação bidirecional (reversão de empuxo) dos motores, característica mandatória para a manobrabilidade em modo *Skid Steering* do catamarã.
-![Configuração de Firmware](./images/firmware_config.jpg)
 
 * **Sistemas de Navegação e GCS:** Operação regida pelos stacks ArduRover ou PX4 na controladora Pixhawk. O monitoramento remoto, planejamento de rotas por *waypoints* georreferenciados e a calibração de malhas sensoriais são conduzidos via software Mission Planner ou QGroundControl.
 ![Interface GCS](./images/interface_gcs.jpg)

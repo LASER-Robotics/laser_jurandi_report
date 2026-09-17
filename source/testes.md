@@ -12,4 +12,3 @@ Antes de colocar a embarcação na água, o sistema foi energizado em bancada pa
 Os testes práticos consistiram no comissionamento do veículo em ambiente aquático real.
 * **Estanqueidade e Flutuabilidade:** Validação da distribuição de peso e vedação do compartimento eletrônico.
 * **Controle Manual (Loiter/Manual):** Avaliação da resposta hidrodinâmica do catamarã e da potência do sistema propulsor.
-* **Navegação Autônoma (Auto):** *(Descreva aqui se o Jurandi já executou missões de pontos de passagem (waypoints) ou se este é um passo futuro).*

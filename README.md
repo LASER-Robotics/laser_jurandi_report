@@ -107,6 +107,22 @@ Uma das etapas críticas da integração foi a parametrização dos ESCs. Para q
 2. **Calibração da Pixhawk 6C:** Executou-se a calibração rigorosa do acelerômetro, giroscópio e da bússola através da GCS, estabelecendo os tensores de correção do referencial inercial para navegação de superfície precisa.
 3. **Mapeamento de Matriz de Motores (Mixer):** Os canais de rádio frequência foram assinalados para vetorização de aceleração e guinada (*throttle/yaw*). Ajustou-se a matriz de mixagem nativa da controladora para o *frame* "Rover/Boat", traduzindo comandos de direção em diferenciais de potência assimétricos entre o motor de bombordo e estibordo.
 
+# Metodologia de Testes
+
+Os testes foram divididos em etapas de laboratório e validação em campo para garantir a segurança do equipamento.
+
+## Testes de Bancada (Em seco)
+Antes de colocar a embarcação na água, o sistema foi energizado em bancada para as seguintes validações:
+* **Sentido de Rotação:** Verificação da resposta dos motores aos comandos do rádio (frente, ré, curva à direita e curva à esquerda) validando a configuração do BLHeli.
+* **Alcance de Telemetria:** Teste de conexão entre a Pixhawk 6C e a Estação de Controle em Solo.
+* **Calibração de Sensores:** Verificação do horizonte artificial e direção da bússola no Mission Planner/QGroundControl.
+
+## Testes de Campo (Na água)
+Os testes práticos consistiram no comissionamento do veículo em ambiente aquático real.
+* **Estanqueidade e Flutuabilidade:** Validação da distribuição de peso e vedação do compartimento eletrônico.
+* **Controle Manual (Loiter/Manual):** Avaliação da resposta hidrodinâmica do catamarã e da potência do sistema propulsor.
+
+
 ## Resultados e Conclusões
 
 O desenvolvimento e integração do catamarã Jurandi demonstraram a viabilidade do uso da Pixhawk 6C em conjunto com ESCs configurados com firmware BLHeli para aplicações marinhas autônomas.
