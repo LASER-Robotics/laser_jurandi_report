@@ -68,9 +68,6 @@ Para o desenvolvimento do catamarã Jurandi, realizou-se a seleção criteriosa 
 
 ### Software e Firmware
 
-* **Firmware de Propulsão:** Firmware BLHeli gravado nos ESCs para viabilizar parametrização avançada. Essencial para ativar a operação bidirecional (reversão de empuxo) dos motores, característica mandatória para a manobrabilidade em modo *Skid Steering* do catamarã.
-![Configuração de Firmware](./source/images/firmware_config.jpg)
-
 * **Sistemas de Navegação e GCS:** Operação regida pelos stacks ArduRover ou PX4 na controladora Pixhawk. O monitoramento remoto, planejamento de rotas por *waypoints* georreferenciados e a calibração de malhas sensoriais são conduzidos via software Mission Planner ou QGroundControl.
 ![Interface GCS](./source/images/interface_gcs.jpg)
 
