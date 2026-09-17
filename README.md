@@ -1,7 +1,6 @@
 # Apresentação e Objetivos
 
-<!-- Inserção do vídeo (ajuste o nome do arquivo para o vídeo cortado correspondente) -->
-<video src="https://github.com/LASER-Robotics/laser_jurandi_report/raw/main/source/_static/jurandi_test_video.mp4" width="100%" controls>
+<video src="source/_static/jurandi_test_video_2.mp4" width="100%" controls>
   Seu navegador não suporta a tag de vídeo.
 </video>
 
@@ -23,8 +22,7 @@ Construir, integrar e validar o hardware e o software de controle do catamarã J
 
 # Materiais e Componentes
 
-<!-- Inserção do vídeo (ajuste o nome do arquivo para o vídeo correspondente) -->
-<video src="./_static/video_retangular.mp4" width="100%" controls>
+<video src="source/_static/jurandi_and_drone_1.mp4" width="100%" controls>
   Seu navegador não suporta a tag de vídeo.
 </video>
 

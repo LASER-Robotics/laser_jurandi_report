@@ -1,7 +1,6 @@
 # Materiais e Componentes
 
-<!-- Inserção do vídeo (ajuste o nome do arquivo para o vídeo correspondente) -->
-<video src="https://github.com/LASER-Robotics/laser_jurandi_report/raw/main/source/_static/jurandi_and_drone_1.mp4" width="100%" controls>
+<video src="_static/jurandi_and_drone_1.mp4" width="100%" controls>
   Seu navegador não suporta a tag de vídeo.
 </video>
 

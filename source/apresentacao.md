@@ -1,7 +1,6 @@
 # Apresentação e Objetivos
 
-<!-- Inserção do vídeo (ajuste o nome do arquivo para o vídeo cortado correspondente) -->
-<video src="https://github.com/LASER-Robotics/laser_jurandi_report/raw/main/source/_static/jurandi_test_video_2.mp4" width="100%" controls>
+<video src="_static/jurandi_test_video_2.mp4" width="100%" controls>
   Seu navegador não suporta a tag de vídeo.
 </video>
 
