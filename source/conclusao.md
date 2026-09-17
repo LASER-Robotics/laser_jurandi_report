@@ -6,7 +6,7 @@ O desenvolvimento e integração do catamarã Jurandi demonstraram a viabilidade
 A arquitetura de hardware escolhida proporcionou comunicação estável via telemetria e controle responsivo da propulsão. O ajuste bidirecional dos motores foi fundamental para a manobrabilidade do catamarã na água.
 
 ## Dificuldades Encontradas
-*(Preencha com os desafios reais do projeto. Exemplos comuns: "Houve dificuldade na calibração da bússola devido ao campo magnético dos motores", ou "O isolamento dos componentes exigiu refações para evitar a entrada de água".)*
+Os principais desafios do projeto concentraram-se na integração eletrônica, especificamente na identificação e resolução de incompatibilidades de comunicação e alimentação entre os componentes de hardware embarcados. Adicionalmente, a parametrização da controladora de voo Pixhawk 6C via QGroundControl exigiu a mitigação de diversos conflitos lógicos no firmware, configurando a etapa mais complexa do desenvolvimento. Em contrapartida, a estruturação mecânica foi executada sem intercorrências significativas, resultado do planejamento prévio e da abordagem metódica adotada durante a montagem
 
 ## Trabalhos Futuros
 Para as próximas etapas do projeto, sugere-se:
