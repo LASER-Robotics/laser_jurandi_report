@@ -30,3 +30,4 @@ language = 'pt_br'
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 html_logo = '_static/laser.png'
+html_baseurl = 'https://LASER-Robotics.github.io/laser_jurandi_report/'
