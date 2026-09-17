@@ -17,5 +17,4 @@ Construir, integrar e validar o hardware e o software de controle do catamarã J
 * **Telemetria e Comunicação:** Estabelecer um link de rádio robusto para o envio de dados em tempo real e operação segura via Estação de Controle em Solo (GCS - *Ground Control Station*).
 * **Testes de Campo:** Validar a dinâmica de locomoção, a estabilidade de flutuabilidade e a confiabilidade na resposta aos comandos de navegação em um ambiente aquático real.
 
-*(Exemplo de como colocar uma imagem no Markdown:)*
 ![Catamarã Jurandi em Teste](images/jurandi_1.jpg)

@@ -1,48 +1,51 @@
-# Materiais e Componentes
+## Materiais e Componentes
 
-<video src="_static/jurandi_and_drone_1.mp4" width="100%" controls>
-  Seu navegador não suporta a tag de vídeo.
-</video>
+[![Teste Jurandi com Drone](https://img.youtube.com/vi/8dZGqTz3dco/maxresdefault.jpg)](https://www.youtube.com/watch?v=8dZGqTz3dco)
 
-Para o desenvolvimento do catamarã Jurandi, realizou-se a seleção criteriosa de componentes de hardware e software, visando assegurar a flutuabilidade adequada da embarcação e o processamento computacional robusto exigido para a navegação autônoma.
-## Estrutura Mecânica 
+Para o desenvolvimento do catamarã Jurandi, realizou-se a seleção criteriosa de componentes de hardware e software, visando assegurar a flutuabilidade adequada, integridade estrutural e o processamento computacional robusto exigido para a navegação autônoma de superfície.
 
-* **Casco do Catamarã:** Estrutura de duplo casco projetada para garantir estabilidade hidrodinâmica. Cada casco é constituído por um tubo de PVC com 200 mm de diâmetro e 1 m de comprimento, contendo um joelho de 45° acoplado em uma extremidade (proa) e um tampão de vedação na outra (popa).
+### Estrutura Mecânica 
+
+* **Casco do Catamarã:** Estrutura de duplo casco projetada para otimizar a estabilidade hidrodinâmica e minimizar o coeficiente de arrasto. Cada casco é constituído por um tubo de cloreto de polivinila (PVC) com 200 mm de diâmetro e 1 m de comprimento, dotado de defletores angulados (joelhos de 45°) na proa para corte de marolas e tampões de vedação hermética na popa.
 ![Casco de PVC](./images/casco_catamara.jpg)
 
-* **Berço do Catamarã:** Armação metálica em formato de paralelepípedo, confeccionada com perfis de alumínio, destinada à sustentação do convés (deck) de acrílico. Apresenta dimensões de 1,0 x 0,8 m.
+* **Berço do Catamarã:** Armação metálica de alta rigidez em formato de paralelepípedo, confeccionada com perfis estruturais de alumínio. Destinada à sustentação do convés principal, apresenta dimensões de 1,0 x 0,8 m, garantindo leveza e resistência à corrosão.
 ![Berço de Alumínio](./images/berco_aluminio.jpg)
 
-* **Deck do Catamarã:** Chapa de acrílico com dimensões de 1,02 x 1,16 m, que atua como convés para acomodação do invólucro de componentes eletrônicos e como plataforma de pouso para os drones. A fixação ao berço de alumínio foi realizada utilizando parafusos e porcas M8. 
+* **Deck do Catamarã:** Chapa de acrílico plana com dimensões de 1,02 x 1,16 m. Atua primariamente como convés dielétrico para a acomodação do invólucro estanque de componentes eletrônicos e como heliponto rígido para a aterrissagem dos drones, distribuindo a carga de impacto uniformemente pelo berço metálico através de fixações com parafusos e porcas M8. 
 ![Deck de Acrílico](./images/deck_acrilico.jpg)
 
-* **Abraçadeiras de Nylon:** Com 500 mm de comprimento, foram empregadas para fixar firmemente os cascos ao berço de alumínio, consolidando o acoplamento estrutural entre cascos, berço e convés.
+* **Abraçadeiras de Fixação Estrutural:** Cintas de nylon de alta tenacidade com 500 mm de comprimento. Empregadas para ancorar mecanicamente os cascos tubulares ao berço de alumínio, mitigando a torção longitudinal e consolidando o monobloco estrutural.
 ![Abraçadeiras de Nylon](./images/abracadeiras_nylon.jpg)
 
-* **Suportes de Fixação:** Componentes modelados em CAD e manufaturados sob medida (via impressão 3D) para a acomodação e fixação segura da eletrônica embarcada.
+* **Suportes de Acomodação Interna:** Componentes projetados via modelagem CAD 3D paramétrica e manufaturados por manufatura aditiva (impressão 3D FDM). Recomenda-se a utilização de polímeros com elevada resistência térmica e mecânica, como o PETG, garantindo o isolamento contra vibrações da eletrônica embarcada no ambiente marinho.
 ![Suportes CAD 3D](./images/suportes_fixacao.jpg)
 
-## Eletrônica e Propulsão
+### Eletrônica, Potência e Propulsão
 
-* **Controladora de Voo (FCU):** Unidade Pixhawk 6C, responsável pelo processamento dos algoritmos de navegação, fusão de dados sensoriais (IMU, magnetômetro) e emissão de sinais de controle.
-![Controladora Pixhawk 6C](./images/pixhawk_6c.jpg)
+* **Controladora de Voo (FCU):** Unidade de processamento modular Pixhawk 6C. Encarregada da execução dos algoritmos de navegação autônoma, malhas de controle PID e fusão avançada de dados sensoriais (EKF) a partir de suas IMUs internas amortecidas e magnetômetro.
+![Controladora Pixhawk 6C](./images/pixhawk_6c.png)
 
-* **Módulo de Telemetria:** Rádio transceptor configurado para comunicação de dados bidirecional em tempo real com a Estação de Controle em Solo (GCS).
+* **Módulo de Gerenciamento de Potência (PMU):** Placa de distribuição de potência Holybro PM07. Desempenha o papel crítico de fornecer regulação de tensão contínua e redundante para a controladora de voo e periféricos, além de realizar a amostragem em tempo real da corrente drenada e da tensão total do sistema para a telemetria.
+![Power Module PM07](./images/bateria_power_module.jpg)
+
+* **Acumulador de Energia:** Bateria de Polímero de Lítio (LiPo) de 4 células (4S - 14.8V nominal) da fabricante Gens Ace. Dimensionada para suportar altas taxas de descarga contínua impostas pelos propulsores marítimos, garantindo a reserva energética necessária para missões de média a longa duração.
+
+* **Cabeamento e Interconexões de Sinal:** Cabeamento lógico e de potência secundária estruturado com fios isolados em silicone flexível de bitola 22 AWG. Esta especificação assegura elevada resiliência térmica, baixa impedância ôhmica para correntes moderadas e excelente imunidade à fadiga mecânica gerada pela vibração contínua dos motores.
+
+* **Rádio Transceptor de Telemetria:** Módulo de RF configurado para o estabelecimento de um link de dados bidirecional criptografado via protocolo MAVLink, permitindo o monitoramento telemétrico e intervenções de controle em tempo real pela Estação de Controle em Solo (GCS).
 ![Módulo de Telemetria](./images/modulo_telemetria.jpg)
 
-* **Controladores Eletrônicos de Velocidade (ESCs):** Módulos dedicados ao acionamento e controle de rotação dos motores, operando com suporte a protocolos de alta velocidade (DShot ou PWM).
-![ESCs BLHeli](./images/esc_motores.jpg)
+* **Controladores Eletrônicos de Velocidade (ESCs):** Módulos de comutação trifásica dedicados ao acionamento dos motores. Operam suportando protocolos digitais de alta frequência (como DShot) e modulação PWM padrão, com suporte a correntes de pico elevadas.
+![ESCs BLHeli](./images/esc_motores.jpeg)
 
-* **Propulsores:** Motores *brushless* marinizados (à prova d'água), projetados para garantir tração hidrodinâmica eficiente e resistência à corrosão.
+* **Propulsores Submersíveis:** Motores *brushless* de baixo KV, intrinsecamente marinizados e vedados (proteção IP avançada). Projetados para operar submersos, oferecem tração hidrodinâmica eficiente através de hélices otimizadas e são altamente resistentes à corrosão hídrica.
 ![Motores Brushless](./images/motores_propulsao.jpg)
 
-* **Sistema de Alimentação:** Composto por bateria de Polímero de Lítio (LiPo) e Módulo de Potência (*Power Module*), assegurando a distribuição isolada e segura de tensão elétrica para a controladora e para os propulsores.
-![Bateria e Power Module](./images/bateria_power_module.jpg)
+### Software e Firmware
 
-## Software e Firmware
-
-* **Firmware de Controle:** BLHeli para a parametrização avançada dos ESCs, e os sistemas ArduRover ou PX4 embarcados na Pixhawk para autonomia de superfície.
+* **Firmware de Propulsão:** Firmware BLHeli gravado nos ESCs para viabilizar parametrização avançada. Essencial para ativar a operação bidirecional (reversão de empuxo) dos motores, característica mandatória para a manobrabilidade em modo *Skid Steering* do catamarã.
 ![Configuração de Firmware](./images/firmware_config.jpg)
 
-* **Estação de Controle em Solo (GCS):** Software Mission Planner ou QGroundControl, utilizados para o monitoramento telemétrico, planejamento de missões e calibração remota.
+* **Sistemas de Navegação e GCS:** Operação regida pelos stacks ArduRover ou PX4 na controladora Pixhawk. O monitoramento remoto, planejamento de rotas por *waypoints* georreferenciados e a calibração de malhas sensoriais são conduzidos via software Mission Planner ou QGroundControl.
 ![Interface GCS](./images/interface_gcs.jpg)
