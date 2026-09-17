@@ -2,4 +2,4 @@ build/
 _build/
 venv/
 .DS_Store
-.github/
+.github/workflows
