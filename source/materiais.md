@@ -1,4 +1,4 @@
-# Materiais e Componentes - V1.0
+# Materiais e Componentes
 
 <!-- Inserção do vídeo (ajuste o nome do arquivo para o vídeo correspondente) -->
 <video src="./_static/video_retangular.mp4" width="100%" controls>
