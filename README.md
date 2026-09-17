@@ -1,4 +1,4 @@
-# 🚤 Projeto Jurandi: Veículo de Superfície Autônomo (ASV)
+# Projeto Jurandi: Veículo de Superfície Autônomo (ASV)
 
 **🔗 Versão Interativa do Site (Local):** [Acessar Documentação Sphinx](file:///home/yavellyn/relatorio-jurandi/build/html/apresentacao.html)
 *(Nota: Links locais `file:///` funcionam apenas ao visualizar o documento no seu próprio computador, sendo bloqueados por segurança caso clicados diretamente pelo site do GitHub).*
