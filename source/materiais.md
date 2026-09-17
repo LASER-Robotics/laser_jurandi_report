@@ -1,6 +1,6 @@
 ## Materiais e Componentes
 
-<video src="_static/jurandi_and_drone.mp4" width="100%" controls></video>
+<video src="_static/jurandi_and_drone_1.mp4" width="100%" controls></video>
 
 Para o desenvolvimento do catamarã Jurandi, realizou-se a seleção criteriosa de componentes de hardware e software, visando assegurar a flutuabilidade adequada, integridade estrutural e o processamento computacional robusto exigido para a navegação autônoma de superfície.
 
