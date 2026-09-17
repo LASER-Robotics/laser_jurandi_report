@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Jurandi'
+project = 'Jurandi - V1.0'
 copyright = '2026, Vitor M. S. Araújo'
 author = 'Vitor M. S. Araújo'
 release = '1.0'
