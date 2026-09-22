@@ -1,34 +1,34 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# For the full list of built-in configuration values, see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
+project = "Jurandi"
+copyright = "2026, Vitor M. S. Araújo"
+author = "Vitor M. S. Araújo"
+release = "1.0"
 
-# -- Project information -----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-
-project = 'Jurandi - V1.0'
-copyright = '2026, Vitor M. S. Araújo'
-author = 'Vitor M. S. Araújo'
-release = '1.0'
-
-# -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-
-extensions = [
-    'myst_parser',
-    'sphinx_rtd_theme'
-]
-
-templates_path = ['_templates']
+extensions = ["myst_parser", "sphinx_design"]
+templates_path = ["_templates"]
 exclude_patterns = []
+language = "pt_BR"
 
-language = 'pt_br'
+myst_enable_extensions = ["colon_fence", "attrs_inline"]
 
-# -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-
-html_theme = 'sphinx_rtd_theme'
-html_static_path = ['_static']
-html_logo = '_static/laser.png'
-html_baseurl = 'https://LASER-Robotics.github.io/laser_jurandi_report/'
+html_theme = "sphinx_rtd_theme"
+html_static_path = ["_static"]
+html_css_files = ["theme.css"]
+html_js_files = ["theme.js"]
+html_logo = "_static/laser.png"
+html_favicon = "_static/favicon.png"
+html_baseurl = "https://laser-robotics.github.io/laser_jurandi_report/"
 html_show_sourcelink = False
+html_show_sphinx = False
+html_title = "Projeto Jurandi — Relatório Técnico"
+html_meta = {
+    "description": "Relatório técnico do veículo de superfície autônomo Jurandi, desenvolvido na UFPB.",
+    "keywords": "Jurandi, ASV, robótica marinha, catamarã, Pixhawk, UFPB, LASER",
+    "author": author,
+}
+html_theme_options = {
+    "logo_only": False,
+    "navigation_depth": 3,
+    "collapse_navigation": False,
+    "sticky_navigation": True,
+    "style_external_links": True,
+}

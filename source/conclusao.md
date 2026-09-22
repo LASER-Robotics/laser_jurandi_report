@@ -1,15 +1,26 @@
 # Resultados e Conclusões
 
-O desenvolvimento e integração do catamarã Jurandi demonstraram a viabilidade do uso da Pixhawk 6C em conjunto com ESCs configurados com firmware BLHeli para aplicações marinhas autônomas.
+O desenvolvimento do Jurandi demonstrou a viabilidade da integração entre a Pixhawk 6C e ESCs com firmware BLHeli em uma plataforma marinha autônoma.
 
-## Resultados Alcançados
-A arquitetura de hardware escolhida proporcionou comunicação estável via telemetria e controle responsivo da propulsão. O ajuste bidirecional dos motores foi fundamental para a manobrabilidade do catamarã na água.
+## Resultados alcançados
 
-## Dificuldades Encontradas
-Os principais desafios do projeto concentraram-se na integração eletrônica, especificamente na identificação e resolução de incompatibilidades de comunicação e alimentação entre os componentes de hardware embarcados. Adicionalmente, a parametrização da controladora de voo Pixhawk 6C via QGroundControl exigiu a mitigação de diversos conflitos lógicos no firmware, configurando a etapa mais complexa do desenvolvimento. Em contrapartida, a estruturação mecânica foi executada sem intercorrências significativas, resultado do planejamento prévio e da abordagem metódica adotada durante a montagem
+- Comunicação estável entre a embarcação e a Estação de Controle em Solo.
+- Controle responsivo dos propulsores em ambos os sentidos.
+- Manobrabilidade por diferença de rotação entre bombordo e estibordo.
+- Estrutura modular com flutuabilidade e estabilidade adequadas aos ensaios.
 
-## Trabalhos Futuros
-Para as próximas etapas do projeto, sugere-se:
-* Otimização dos parâmetros de controle PID para navegação em linha reta mais suave.
-* Integração de sensores adicionais (ex: sonar, câmera, ou sensores de qualidade da água).
-* Execução de missões autônomas de longo alcance para mapeamento de áreas.
+:::{admonition} Síntese
+:class: result-callout
+O ajuste bidirecional dos motores foi decisivo para a manobrabilidade do catamarã e confirmou a adequação da arquitetura escolhida.
+:::
+
+## Dificuldades encontradas
+
+Os principais desafios concentraram-se na integração eletrônica, especialmente na identificação de incompatibilidades de comunicação e alimentação. A parametrização da Pixhawk 6C via QGroundControl exigiu a mitigação de conflitos lógicos no firmware e constituiu a etapa mais complexa. A montagem mecânica, em contrapartida, ocorreu sem intercorrências significativas devido ao planejamento prévio.
+
+## Trabalhos futuros
+
+1. Otimizar os parâmetros PID para uma navegação em linha reta mais suave.
+2. Integrar sonar, câmera e sensores de qualidade da água.
+3. Executar missões autônomas de longo alcance para mapeamento de áreas.
+4. Validar pousos e decolagens repetidos de drones sobre o deck.

@@ -1,50 +1,144 @@
-## Materiais e Componentes
+# Materiais e Componentes
 
-<video src="_static/jurandi_and_drone_1.mp4" width="100%" controls></video>
+<div class="video-frame"><iframe src="https://youtube.com/shorts/s1-IYc2nubc" title="Teste integrado do Jurandi com drone" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
 
-Para o desenvolvimento do catamarã Jurandi, realizou-se a seleção criteriosa de componentes de hardware e software, visando assegurar a flutuabilidade adequada, integridade estrutural e o processamento computacional robusto exigido para a navegação autônoma de superfície.
+A seleção dos componentes priorizou flutuabilidade, integridade estrutural, resistência ao ambiente aquático e capacidade de processamento para navegação autônoma.
 
-### Estrutura Mecânica 
+## Especificações principais
 
-* **Casco do Catamarã:** Estrutura de duplo casco projetada para otimizar a estabilidade hidrodinâmica e minimizar o coeficiente de arrasto. Cada casco é constituído por um tubo de cloreto de polivinila (PVC) com 200 mm de diâmetro e 1 m de comprimento, dotado de defletores angulados (joelhos de 45°) na proa para corte de marolas e tampões de vedação hermética na popa.
-![Casco de PVC](./images/casco_catamara.jpg)
+| Subsistema | Componente | Especificação |
+|---|---|---|
+| Cascos | Tubos de PVC | 200 mm de diâmetro × 1 m de comprimento |
+| Berço | Perfis de alumínio | 1,0 × 0,8 m |
+| Deck | Chapa de acrílico | 1,02 × 1,16 m; fixação M8 |
+| Controle | Pixhawk 6C | IMUs internas e fusão sensorial EKF |
+| Energia | Bateria LiPo Gens Ace | 4S; 14,8 V nominal |
+| Cabeamento | Fio de silicone | 22 AWG |
 
-* **Berço do Catamarã:** Armação metálica de alta rigidez em formato de paralelepípedo, confeccionada com perfis estruturais de alumínio. Destinada à sustentação do convés principal, apresenta dimensões de 1,0 x 0,8 m, garantindo leveza e resistência à corrosão.
-![Berço de Alumínio](./images/berco_aluminio.jpg)
+## Estrutura mecânica
 
-* **Deck do Catamarã:** Chapa de acrílico plana com dimensões de 1,02 x 1,16 m. Atua primariamente como convés dielétrico para a acomodação do invólucro estanque de componentes eletrônicos e como heliponto rígido para a aterrissagem dos drones, distribuindo a carga de impacto uniformemente pelo berço metálico através de fixações com parafusos e porcas M8. 
-![Deck de Acrílico](./images/deck_acrilico.jpg)
+### Cascos e berço
 
-* **Abraçadeiras de Fixação Estrutural:** Cintas de nylon de alta tenacidade com 500 mm de comprimento. Empregadas para ancorar mecanicamente os cascos tubulares ao berço de alumínio, mitigando a torção longitudinal e consolidando o monobloco estrutural.
-![Abraçadeiras de Nylon](./images/abracadeiras_nylon.jpg)
+Os dois cascos usam tubos de PVC com defletores angulados de 45° na proa e tampões herméticos na popa. O berço de perfis de alumínio sustenta o convés, combinando rigidez, baixo peso e resistência à corrosão.
 
-* **Suportes de Acomodação Interna:** Componentes projetados via modelagem CAD 3D paramétrica e manufaturados por manufatura aditiva (impressão 3D FDM). Recomenda-se a utilização de polímeros com elevada resistência térmica e mecânica, como o PETG, garantindo o isolamento contra vibrações da eletrônica embarcada no ambiente marinho.
-![Suportes CAD 3D](./images/suportes_fixacao.jpg)
+::::{grid} 2
+:gutter: 2
 
-### Eletrônica, Potência e Propulsão
+:::{grid-item}
+```{figure} images/casco_catamara.jpg
+:alt: Casco do catamarã construído com tubo de PVC
+Casco tubular de PVC.
+```
+:::
+:::{grid-item}
+```{figure} images/berco_aluminio.jpg
+:alt: Berço estrutural montado com perfis de alumínio
+Berço estrutural de alumínio.
+```
+:::
+::::
 
-* **Controladora de Voo (FCU):** Unidade de processamento modular Pixhawk 6C. Encarregada da execução dos algoritmos de navegação autônoma, malhas de controle PID e fusão avançada de dados sensoriais (EKF) a partir de suas IMUs internas amortecidas e magnetômetro.
-![Controladora Pixhawk 6C](./images/pixhawk_6c.png)
+### Deck de acrílico
 
-* **Módulo de Gerenciamento de Potência (PMU):** Placa de distribuição de potência Holybro PM07. Desempenha o papel crítico de fornecer regulação de tensão contínua e redundante para a controladora de voo e periféricos, além de realizar a amostragem em tempo real da corrente drenada e da tensão total do sistema para a telemetria.
-![Power Module PM07](./images/bateria_power_module.jpg)
+A chapa plana funciona como convés dielétrico, base do invólucro estanque e heliponto rígido. A carga de impacto é distribuída pelo berço por fixações com parafusos e porcas M8.
 
-* **Acumulador de Energia:** Bateria de Polímero de Lítio (LiPo) de 4 células (4S - 14.8V nominal) da fabricante Gens Ace. Dimensionada para suportar altas taxas de descarga contínua impostas pelos propulsores marítimos, garantindo a reserva energética necessária para missões de média a longa duração.
-![Módulo de Telemetria](./images/lipo_4s.jpg)
+```{figure} images/deck_acrilico.jpg
+:alt: Catamarã Jurandi na água com o deck de acrílico e a eletrônica embarcada visíveis
+:class: report-figure
 
-* **Cabeamento e Interconexões de Sinal:** Cabeamento lógico e de potência secundária estruturado com fios isolados em silicone flexível de bitola 22 AWG. Esta especificação assegura elevada resiliência térmica, baixa impedância ôhmica para correntes moderadas e excelente imunidade à fadiga mecânica gerada pela vibração contínua dos motores.
-![Módulo de Telemetria](./images/cabo_silicone.jpg)
+Deck de acrílico instalado no Jurandi durante ensaio em piscina.
+```
 
-* **Rádio Transceptor de Telemetria:** Módulo de RF configurado para o estabelecimento de um link de dados bidirecional criptografado via protocolo MAVLink, permitindo o monitoramento telemétrico e intervenções de controle em tempo real pela Estação de Controle em Solo (GCS).
-![Módulo de Telemetria](./images/modulo_telemetria.jpg)
+### Fixação e suportes internos
 
-* **Controladores Eletrônicos de Velocidade (ESCs):** Módulos de comutação trifásica dedicados ao acionamento dos motores. Operam suportando protocolos digitais de alta frequência (como DShot) e modulação PWM padrão, com suporte a correntes de pico elevadas.
-![ESCs BLHeli](./images/esc_motores.jpeg)
+Cintas de nylon de 500 mm ancoram os cascos ao berço e mitigam a torção longitudinal. Suportes internos modelados em CAD e impressos em PETG isolam a eletrônica das vibrações.
 
-* **Propulsores Submersíveis:** Motores *brushless* de baixo KV, intrinsecamente marinizados e vedados (proteção IP avançada). Projetados para operar submersos, oferecem tração hidrodinâmica eficiente através de hélices otimizadas e são altamente resistentes à corrosão hídrica.
-![Motores Brushless](./images/motores_propulsao.jpg)
+::::{grid} 2
+:gutter: 2
 
-### Software e Firmware
+:::{grid-item}
+```{figure} images/abracadeiras_nylon.jpg
+:alt: Abraçadeiras de nylon utilizadas na fixação estrutural
+Abraçadeiras de fixação estrutural.
+```
+:::
+:::{grid-item}
+```{figure} images/suportes_fixacao.jpg
+:alt: Suportes internos modelados em CAD e impressos em 3D
+Suportes internos impressos em 3D.
+```
+:::
+::::
 
-* **Sistemas de Navegação e GCS:** Operação regida pelos stacks ArduRover ou PX4 na controladora Pixhawk. O monitoramento remoto, planejamento de rotas por *waypoints* georreferenciados e a calibração de malhas sensoriais são conduzidos via software Mission Planner ou QGroundControl.
-![Interface GCS](./images/interface_gcs.jpg)
+## Eletrônica, potência e propulsão
+
+### Controle e energia
+
+A Pixhawk 6C executa navegação, controle PID e fusão sensorial. O módulo Holybro PM07 regula a alimentação, distribui potência e mede corrente e tensão. Uma bateria LiPo 4S fornece a reserva energética.
+
+::::{grid} 3
+:gutter: 2
+
+:::{grid-item}
+```{figure} images/pixhawk_6c.png
+:alt: Controladora de voo Pixhawk 6C
+Controladora Pixhawk 6C.
+```
+:::
+:::{grid-item}
+```{figure} images/bateria_power_module.jpg
+:alt: Módulo de gerenciamento de potência Holybro PM07
+Módulo de potência PM07.
+```
+:::
+:::{grid-item}
+```{figure} images/lipo_4s.jpg
+:alt: Bateria de polímero de lítio Gens Ace 4S
+Bateria LiPo 4S.
+```
+:::
+::::
+
+### Comunicação e acionamento
+
+O cabeamento de silicone 22 AWG combina flexibilidade, resistência térmica e baixa impedância. O rádio estabelece comunicação bidirecional MAVLink com a GCS. ESCs com BLHeli acionam os motores submersíveis em ambos os sentidos.
+
+::::{grid} 2
+:gutter: 2
+
+:::{grid-item}
+```{figure} images/cabo_silicone.jpg
+:alt: Cabo flexível de silicone utilizado nas interconexões
+Cabeamento de silicone 22 AWG.
+```
+:::
+:::{grid-item}
+```{figure} images/modulo_telemetria.jpg
+:alt: Rádio transceptor usado no enlace de telemetria
+Rádio de telemetria MAVLink.
+```
+:::
+:::{grid-item}
+```{figure} images/esc_motores.jpeg
+:alt: Controladores eletrônicos de velocidade usados nos motores
+Controladores eletrônicos de velocidade.
+```
+:::
+:::{grid-item}
+```{figure} images/motores_propulsao.jpg
+:alt: Motores brushless submersíveis usados na propulsão
+Propulsores submersíveis.
+```
+:::
+::::
+
+## Software e firmware
+
+A navegação pode utilizar ArduRover ou PX4. O planejamento por *waypoints*, a calibração dos sensores e o monitoramento remoto são realizados pelo Mission Planner ou QGroundControl.
+
+```{figure} images/interface_gcs.jpg
+:alt: Interface da estação de controle em solo usada para configurar a embarcação
+:class: report-figure
+
+Interface da Estação de Controle em Solo (GCS).
+```

@@ -1,14 +1,30 @@
 # Metodologia de Testes
 
-Os testes foram divididos em etapas de laboratório e validação em campo para garantir a segurança do equipamento.
+Os testes foram organizados em bancada e em campo para reduzir riscos e verificar progressivamente cada subsistema.
 
-## Testes de Bancada (Em seco)
-Antes de colocar a embarcação na água, o sistema foi energizado em bancada para as seguintes validações:
-* **Sentido de Rotação:** Verificação da resposta dos motores aos comandos do rádio (frente, ré, curva à direita e curva à esquerda) validando a configuração do BLHeli.
-* **Alcance de Telemetria:** Teste de conexão entre a Pixhawk 6C e a Estação de Controle em Solo.
-* **Calibração de Sensores:** Verificação do horizonte artificial e direção da bússola no Mission Planner/QGroundControl.
+## Testes de bancada
 
-## Testes de Campo (Na água)
-Os testes práticos consistiram no comissionamento do veículo em ambiente aquático real.
-* **Estanqueidade e Flutuabilidade:** Validação da distribuição de peso e vedação do compartimento eletrônico.
-* **Controle Manual (Loiter/Manual):** Avaliação da resposta hidrodinâmica do catamarã e da potência do sistema propulsor.
+| Verificação | Critério observado |
+|---|---|
+| Sentido de rotação | Resposta dos motores aos comandos de frente, ré e curvas, validando o BLHeli. |
+| Alcance de telemetria | Conexão estável entre a Pixhawk 6C e a Estação de Controle em Solo. |
+| Calibração de sensores | Coerência do horizonte artificial e da direção da bússola na GCS. |
+
+## Testes de campo
+
+| Verificação | Critério observado |
+|---|---|
+| Estanqueidade e flutuabilidade | Distribuição de peso, estabilidade e vedação do compartimento eletrônico. |
+| Controle manual | Resposta hidrodinâmica e potência do sistema propulsor nos modos Loiter/Manual. |
+
+```{figure} images/payload_test.jpeg
+:alt: Preparação do catamarã Jurandi para um teste de carga e estabilidade
+:class: report-figure
+
+Preparação da plataforma para validação experimental.
+```
+
+:::{admonition} Sequência de segurança
+:class: result-callout
+A validação em seco antecedeu a entrada na água, evitando que falhas de acionamento, comunicação ou calibração comprometessem a embarcação.
+:::

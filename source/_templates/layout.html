@@ -1,0 +1,15 @@
+{% extends "!layout.html" %}
+{% block extrahead %}
+  {{ super() }}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Projeto Jurandi — Relatório Técnico">
+  <meta property="og:description" content="Desenvolvimento, integração e validação de um veículo de superfície autônomo em formato de catamarã.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+{% endblock %}
+{% block body %}
+  <a class="skip-link" href="#documentacao">Pular para o conteúdo</a>
+  {{ super() }}
+{% endblock %}
