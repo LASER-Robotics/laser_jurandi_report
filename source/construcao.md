@@ -1,29 +1,134 @@
 # Construção e Integração
 
-O processo de construção do Jurandi foi dividido na montagem mecânica estrutural e na integração e configuração de baixo nível dos sistemas eletrônicos e de propulsão.
+A construção do Jurandi foi organizada em uma sequência progressiva: preparação dos cascos, montagem do berço, instalação do deck e dos propulsores, integração eletrônica e, por fim, configuração do controle. Essa ordem facilitou a inspeção de cada subsistema antes dos ensaios em água.
 
-## Montagem Mecânica e Estrutural
+:::{admonition} Critérios adotados
+:class: result-callout
+A montagem priorizou modularidade, rigidez, estanqueidade, distribuição equilibrada de massa e acesso aos componentes para manutenção.
+:::
 
-A construção da estrutura física priorizou a modularidade e a resistência mecânica, garantindo uma plataforma rígida para a navegação:
+## Visão geral do processo
 
-* **Fabricação dos Cascos:** Os cascos cilíndricos foram construídos a partir de tubos de PVC. Para assegurar a estanqueidade total, acoplou-se um tampão de vedação na popa e um joelho de 45° na proa de cada tubo. A união definitiva das peças foi realizada por meio de soldagem química com adesivo plástico para PVC (Krona).
-* **Estruturação do Berço:** A armação que forma o berço metálico foi montada utilizando perfis de alumínio. O esquadro e a rigidez foram garantidos pelo uso de cantoneiras metálicas (junções em L) e conectores customizados em PETG (manufaturados via impressão 3D FDM). Todo o conjunto foi fixado por uniões parafusadas.
-* **Acoplamento do Convés (Deck):** A chapa superior de acrílico foi submetida a perfurações de precisão para alinhamento com a estrutura inferior e fixada mecanicamente ao berço metálico utilizando conjuntos de parafusos e porcas M8.
-* **Ancoragem e Suportes de Propulsão:** Os motores *brushless* foram parafusados a suportes hidrodinâmicos customizados, impressos em 3D. A fixação conjunta dos cascos de PVC e dos suportes dos motores ao berço de alumínio foi realizada através de abraçadeiras de nylon de alta tenacidade. O roteamento das cintas foi feito passando entre a chapa de acrílico e o berço metálico, abraçando simultaneamente a estrutura de alumínio e os tubos de PVC. Utilizou-se uma média de 16 abraçadeiras tensionadas por casco para consolidar todo o monobloco.
+| Etapa | Atividade principal | Resultado esperado |
+|---|---|---|
+| 1 | Preparação e vedação dos cascos | Dois volumes estanques e alinhados |
+| 2 | Montagem do berço de alumínio | Estrutura rígida e esquadrejada |
+| 3 | Instalação do deck | Convés nivelado e fixado ao berço |
+| 4 | Fixação dos propulsores | Motores firmes e posicionados simetricamente |
+| 5 | Integração eletrônica | Componentes protegidos e cabeamento modular |
+| 6 | Configuração e calibração | Propulsão bidirecional e sensores ajustados |
+| 7 | Verificação em bancada | Sistema apto para o primeiro ensaio em água |
 
-## Integração Eletrônica e Modularização
+## Montagem mecânica e estrutural
 
-A arquitetura eletrônica foi projetada para suportar o ambiente marinho e facilitar manutenções locais:
+### 1. Fabricação dos cascos
 
-* **Cabeamento e Conexões:** O chicote elétrico dos propulsores foi estendido utilizando cabos de silicone de especificação 22 AWG, que oferecem alta flexibilidade mecânica e resistência térmica. Para modularizar o sistema e permitir a desconexão rápida dos motores, as terminações das fases foram soldadas a conectores cilíndricos de alta corrente tipo *Bullet* (*Bullet Connectors*).
-* **Acondicionamento Estanque:** Toda a eletrônica de controle e potência — incluindo a FCU Pixhawk 6C, o módulo de telemetria, o módulo de potência PM07 Holybro e a bateria LiPo 4S da Gens Ace — foi inserida e organizada no interior de um invólucro polimérico vedado (uma caixa adaptada tipo *Tupperware*). Esse compartimento atua como uma central eletrônica (E-box) blindada contra ingresso de água e maresia.
-* **Isolamento Sensorial:** No interior do compartimento estanque, a controladora Pixhawk 6C foi posicionada o mais próximo possível do centro de gravidade (CG) da embarcação e assentada sobre espumas amortecedoras elastoméricas, isolando a Unidade de Medida Inercial (IMU) das vibrações de alta frequência geradas pelos propulsores.
-* **Mitigação de Interferências:** O módulo de GPS e a bússola externa foram instalados no topo de uma haste elevada (mastro), distanciando os magnetômetros dos campos eletromagnéticos transientes induzidos pelos cabos de potência dos motores e da bateria. As conexões de rádio e telemetria foram ancoradas nas portas seriais e RC IN dedicadas da FCU.
+Os cascos cilíndricos foram construídos com tubos de PVC de 200 mm de diâmetro e 1 m de comprimento. Em cada tubo, instalou-se um joelho de 45° na proa e um tampão na popa. As uniões foram realizadas com adesivo plástico para PVC, formando volumes fechados e resistentes à entrada de água.
 
-## Configuração de Firmware (BLHeli e Pixhawk)
+```{figure} images/casco_catamara.jpg
+:alt: Casco cilíndrico do Jurandi feito de tubo de PVC com fechamento na extremidade
+:class: report-figure
 
-Uma das etapas críticas da integração foi a parametrização dos ESCs. Para que um ASV no formato catamarã tenha boa manobrabilidade usando *Skid Steering* (controle vetorial pela diferença de rotação dos motores modulares), os propulsores precisam operar dinamicamente em ambos os sentidos (avante e reverso).
+Casco tubular de PVC utilizado na estrutura flutuante.
+```
 
-1. **Flash do Firmware BLHeli:** O firmware BLHeli nativo dos ESCs foi atualizado e reconfigurado para o modo bidirecional (*Bidirectional Mode*). Essa parametrização estabelece que o sinal de controle neutro (largura de pulso PWM em torno de 1500 µs) mantenha o rotor estático. Sinais de largura superior induzem torque positivo (avante), enquanto larguras inferiores revertem a comutação das fases (ré).
-2. **Calibração da Pixhawk 6C:** Executou-se a calibração rigorosa do acelerômetro, giroscópio e da bússola através da GCS, estabelecendo os tensores de correção do referencial inercial para navegação de superfície precisa.
-3. **Mapeamento de Matriz de Motores (Mixer):** Os canais de rádio frequência foram assinalados para vetorização de aceleração e guinada (*throttle/yaw*). Ajustou-se a matriz de mixagem nativa da controladora para o *frame* "Rover/Boat", traduzindo comandos de direção em diferenciais de potência assimétricos entre o motor de bombordo e estibordo.
+Antes da montagem definitiva, as superfícies de contato devem estar limpas, secas e corretamente encaixadas. A cura do adesivo deve ser respeitada antes do teste de estanqueidade.
+
+### 2. Estruturação do berço
+
+O berço foi montado com perfis de alumínio e dimensões aproximadas de 1,0 × 0,8 m. Cantoneiras metálicas e conectores em PETG impressos em 3D garantiram o esquadro das junções. As uniões parafusadas permitem desmontagem e ajustes sem comprometer os perfis.
+
+```{figure} images/berco_aluminio.jpg
+:alt: Berço retangular do catamarã montado com perfis de alumínio e cantoneiras
+:class: report-figure
+
+Berço estrutural antes da instalação sobre os cascos.
+```
+
+### 3. Acoplamento do deck
+
+A chapa de acrílico de 1,02 × 1,16 m foi marcada e perfurada de acordo com os pontos de fixação do berço. O deck foi então preso à estrutura com parafusos e porcas M8. Além de acomodar o compartimento eletrônico, a chapa cria uma superfície plana para as operações com drones.
+
+```{figure} images/deck_acrilico.jpg
+:alt: Catamarã Jurandi na piscina com deck transparente de acrílico instalado sobre os cascos
+:class: report-figure
+
+Deck de acrílico instalado e integrado à estrutura do Jurandi.
+```
+
+### 4. Ancoragem dos cascos e suportes de propulsão
+
+Os motores *brushless* foram parafusados a suportes hidrodinâmicos impressos em 3D. Os cascos e os suportes foram ancorados ao berço com abraçadeiras de nylon de alta tenacidade. As cintas passam entre a chapa de acrílico e os perfis, envolvendo a estrutura e os tubos de PVC. Utilizou-se uma média de 16 abraçadeiras tensionadas por casco.
+
+:::{admonition} Inspeção mecânica
+:class: result-callout
+Antes de instalar a eletrônica, verifique o alinhamento dos cascos, o aperto das uniões M8, a tensão uniforme das abraçadeiras e a ausência de contato entre hélices e estrutura.
+:::
+
+## Integração eletrônica e modularização
+
+### Arquitetura de interligação
+
+```text
+Bateria LiPo 4S
+      │
+      ▼
+Módulo de potência PM07 ─────► Pixhawk 6C ─────► Rádio / GCS
+      │                              │
+      ├────────► ESC bombordo ─────► Motor bombordo
+      └────────► ESC estibordo ────► Motor estibordo
+                                     │
+                           GPS e bússola externa
+```
+
+### Cabeamento e conexões
+
+O chicote dos propulsores foi estendido com cabos flexíveis de silicone 22 AWG. As terminações das fases receberam conectores cilíndricos de alta corrente do tipo *bullet*, permitindo desconectar os motores sem refazer soldas e simplificando inspeções e substituições.
+
+### Acondicionamento estanque
+
+A Pixhawk 6C, o rádio de telemetria, o módulo de potência Holybro PM07 e a bateria LiPo 4S foram organizados em um invólucro polimérico vedado. Esse compartimento central protege a eletrônica contra respingos e umidade e mantém os módulos acessíveis para manutenção.
+
+### Posicionamento dos sensores
+
+A Pixhawk foi posicionada próxima ao centro de gravidade da embarcação e apoiada sobre material amortecedor para reduzir a transmissão de vibrações à Unidade de Medida Inercial. O GPS e a bússola externa foram instalados em uma haste elevada, afastados dos cabos de potência e dos campos magnéticos produzidos pelo sistema propulsor.
+
+## Configuração do firmware
+
+### 1. ESCs e BLHeli
+
+Para permitir manobras por diferença de empuxo (*skid steering*), os ESCs foram configurados no modo bidirecional. O sinal PWM próximo de 1500 µs corresponde ao ponto neutro; valores acima comandam o movimento avante e valores abaixo comandam a ré.
+
+### 2. Calibração da Pixhawk 6C
+
+Acelerômetro, giroscópio e bússola foram calibrados pela Estação de Controle em Solo. Essa etapa estabelece as correções do referencial inercial usadas na estimativa de atitude e na navegação.
+
+### 3. Matriz de motores
+
+A controladora foi ajustada para o *frame* Rover/Boat. A mistura dos comandos de aceleração e guinada distribui potências diferentes entre os motores de bombordo e estibordo, permitindo avanço, recuo e curvas sem leme mecânico.
+
+| Comando | Motor de bombordo | Motor de estibordo |
+|---|---|---|
+| Avançar | Avante | Avante |
+| Recuar | Ré | Ré |
+| Curvar a bombordo | Menor empuxo ou ré | Maior empuxo avante |
+| Curvar a estibordo | Maior empuxo avante | Menor empuxo ou ré |
+| Neutro | Parado | Parado |
+
+## Verificação antes do ensaio em água
+
+- [ ] Cascos vedados e sem indícios de entrada de água.
+- [ ] Berço alinhado, parafusos apertados e deck sem folgas.
+- [ ] Abraçadeiras tensionadas de forma uniforme.
+- [ ] Hélices livres, firmes e sem contato com a estrutura.
+- [ ] Cabos identificados, isolados e afastados das partes móveis.
+- [ ] Compartimento eletrônico fechado e fixado ao deck.
+- [ ] Centro de gravidade conferido com a bateria instalada.
+- [ ] Pixhawk, GPS, bússola e rádio reconhecidos pela GCS.
+- [ ] Ponto neutro e sentidos de rotação testados com segurança.
+- [ ] Comando de parada e procedimento de desarme verificados.
+
+:::{admonition} Segurança
+:class: result-callout
+Os testes dos propulsores em bancada devem ser realizados com a área das hélices isolada. A embarcação somente deve entrar na água após a confirmação do neutro, do sentido de rotação, da telemetria e da orientação dos sensores.
+:::
