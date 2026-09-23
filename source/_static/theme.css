@@ -5,9 +5,6 @@
 /* ---- Botão de download do relatório em PDF ---- */
 .pdf-download{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:"Space Grotesk",sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:3px;transition:background .15s ease,transform .15s ease,box-shadow .15s ease}
 .pdf-download__icon{font-size:1rem;line-height:1}
-.pdf-download--side{width:calc(100% - 3rem);margin:0 1.5rem 1.25rem;padding:.7rem .9rem;background:var(--jurandi-blue);color:#fff!important;border:1px solid #3b82f6}
-.pdf-download--side:hover{background:#1d4ed8;color:#fff!important}
-.pdf-download--side:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .pdf-download--float{position:fixed;right:1.75rem;bottom:1.75rem;z-index:500;padding:.85rem 1.15rem;background:var(--jurandi-navy);color:#fff!important;box-shadow:var(--jurandi-shadow);border:1px solid #334155}
 .pdf-download--float:hover{background:var(--jurandi-blue);color:#fff!important;transform:translateY(-2px)}
 @media screen and (max-width:768px){.pdf-download--float span:not(.pdf-download__icon){display:none}.pdf-download--float{right:1rem;bottom:1rem;padding:.9rem 1rem}}

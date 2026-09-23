@@ -1,4 +1,5 @@
 {% extends "!layout.html" %}
+
 {% block extrahead %}
   {{ super() }}
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -9,21 +10,15 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
 {% endblock %}
-{% block sidebartitle %}
-  {{ super() }}
-  <a class="pdf-download pdf-download--side"
-     href="{{ pathto('_static/' + (pdf_filename | default('relatorio-jurandi.pdf')), 1) }}"
-     download>
-    <span class="pdf-download__icon" aria-hidden="true">⭳</span>
-    <span>Download Report PDF</span>
-  </a>
-{% endblock %}
+
 {% block body %}
   <a class="skip-link" href="#documentacao">Pular para o conteúdo</a>
   {{ super() }}
 {% endblock %}
+
 {% block footer %}
   {{ super() }}
+  <!-- Botão preto flutuante no canto inferior direito -->
   <a class="pdf-download pdf-download--float"
      href="{{ pathto('_static/' + (pdf_filename | default('relatorio-jurandi.pdf')), 1) }}"
      download

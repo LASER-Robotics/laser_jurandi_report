@@ -1,6 +1,6 @@
 # Materiais e Componentes
 
-<div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/8dZGqTz3dco" title="Teste integrado do Jurandi com drone" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+<div class="video-frame"><iframe src="https://www.youtube.com/embed/nzCvgDm2XLM" title="Teste integrado do Jurandi com drone" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
 
 A seleção dos componentes priorizou flutuabilidade, integridade estrutural, resistência ao ambiente aquático e capacidade de processamento para navegação autônoma.
 
