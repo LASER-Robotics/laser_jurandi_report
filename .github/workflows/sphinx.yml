@@ -27,23 +27,28 @@ jobs:
           python-version: "3.12"
           cache: "pip"
 
-      - name: Instalar dependências
+      - name: Instalar dependências e navegadores
         run: |
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then
             pip install -r requirements.txt
-          else
-            pip install sphinx sphinx-rtd-theme myst-parser sphinx-design
           fi
+          # Instala dependências do gerador de PDF
+          pip install playwright pypdf reportlab
+          playwright install --with-deps chromium
 
-      - name: Compilar documentação com Sphinx
+      - name: Compilar documentação HTML com Sphinx
         run: |
           make html
+
+      - name: Gerar PDF do Relatório Jurandi
+        run: |
+          python tools/build_pdf.py --html build/html --output build/html/_static/relatorio-jurandi.pdf
 
       - name: Configurar Pages do GitHub
         uses: actions/configure-pages@v4
 
-      - name: Enviar diretório HTML para o Pages
+      - name: Enviar diretório HTML com PDF para o Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: "build/html"
