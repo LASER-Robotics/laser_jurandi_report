@@ -123,44 +123,6 @@ A integração demonstrou a viabilidade do uso da Pixhawk 6C com ESCs BLHeli em 
 
 Os desafios mais relevantes estiveram na compatibilidade elétrica, na comunicação entre os componentes e na parametrização da controladora. Como continuidade, estão previstos o refinamento dos parâmetros PID, a integração de novos sensores, missões autônomas de maior alcance e testes repetidos de pouso e decolagem de drones.
 
-## Documentação Sphinx
-
-### Estrutura do relatório
-
-```text
-source/
-├── index.md          Página inicial
-├── apresentacao.md   Contexto e objetivos
-├── materiais.md      Estrutura, eletrônica e software
-├── construcao.md     Montagem e integração
-├── testes.md         Validação em bancada e em campo
-├── conclusao.md      Resultados e trabalhos futuros
-└── images/           Fotografias e ilustrações
-```
-
-### Gerar o site localmente
-
-Requer Python 3.10 ou superior.
-
-```bash
-python -m venv venv
-source venv/bin/activate
-python -m pip install -r requirements.txt
-make html
-```
-
-Para visualizar com uma origem HTTP local, evitando bloqueios de conteúdo incorporado:
-
-```bash
-python -m http.server 8000 --directory build/html
-```
-
-Abra `http://localhost:8000` no navegador.
-
-### Publicação
-
-O envio de alterações para a branch `main` aciona o fluxo em `.github/workflows/sphinx.yml`. O GitHub Actions gera o site e o publica no GitHub Pages. Em **Settings → Pages**, a origem de publicação deve estar definida como **GitHub Actions**.
-
 ## Instituição e apoio
 
 Projeto desenvolvido na **Universidade Federal da Paraíba (UFPB)** com apoio da **CAPES**.
