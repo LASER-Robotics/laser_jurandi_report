@@ -1,0 +1,297 @@
+/* Estilos aplicados apenas na geração do PDF (tools/build_pdf.py). */
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 20mm 16mm;
+}
+
+html,
+body {
+  background: #ffffff !important;
+  color: #1f2937 !important;
+  font-family: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.6;
+}
+
+/* Remove toda a moldura de navegação do tema web. */
+.wy-nav-side,
+.wy-nav-top,
+.rst-versions,
+.wy-breadcrumbs,
+.rst-footer-buttons,
+.wy-nav-content-wrap > .rst-content > div[role="navigation"],
+footer hr,
+.headerlink,
+.skip-link {
+  display: none !important;
+}
+
+.wy-grid-for-nav,
+.wy-nav-content-wrap,
+.wy-nav-content,
+.rst-content,
+section {
+  display: block !important;
+  position: static !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+  background: #ffffff !important;
+}
+
+/* ---------- Capa ---------- */
+.pdf-cover {
+  page-break-after: always;
+  break-after: page;
+  min-height: 232mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pdf-cover__top {
+  border-top: 6px solid #2563eb;
+  padding-top: 14mm;
+}
+
+.pdf-cover__kicker {
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #2563eb;
+}
+
+.pdf-cover__title {
+  font-family: "Space Grotesk", "DM Sans", sans-serif;
+  font-size: 30pt;
+  line-height: 1.05;
+  font-weight: 700;
+  color: #111827;
+  margin: 10mm 0 6mm;
+}
+
+.pdf-cover__subtitle {
+  font-size: 12pt;
+  color: #46546a;
+  max-width: 130mm;
+}
+
+.pdf-cover__image {
+  width: 100%;
+  height: 72mm;
+  object-fit: cover;
+  margin: 12mm 0;
+}
+
+.pdf-meta {
+  width: 100%;
+  border-top: 1px solid #dce3ec;
+  border-collapse: collapse;
+  font-size: 9.5pt;
+}
+
+.pdf-meta td {
+  border-bottom: 1px solid #dce3ec;
+  padding: 3mm 0;
+  vertical-align: top;
+}
+
+.pdf-meta td:first-child {
+  width: 42mm;
+  color: #64748b;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 8pt;
+}
+
+/* ---------- Sumário ---------- */
+.pdf-toc {
+  page-break-after: always;
+  break-after: page;
+}
+
+.pdf-toc h2 {
+  font-family: "Space Grotesk", "DM Sans", sans-serif;
+  font-size: 16pt;
+  color: #111827;
+  border-top: 0 !important;
+  margin: 0 0 8mm;
+}
+
+.pdf-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: pdftoc;
+}
+
+.pdf-toc li {
+  display: flex;
+  align-items: baseline;
+  gap: 3mm;
+  padding: 2.4mm 0;
+  font-size: 10.5pt;
+  color: #172033;
+  border-bottom: 1px dotted #cbd5e1;
+}
+
+.pdf-toc li.level-1 {
+  font-family: "Space Grotesk", "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 11.5pt;
+  margin-top: 4mm;
+  border-bottom: 1px solid #111827;
+}
+
+.pdf-toc li.level-2 {
+  padding-left: 7mm;
+  font-size: 9.8pt;
+  color: #46546a;
+}
+
+.pdf-toc__text {
+  flex: 1;
+}
+
+.pdf-toc__page {
+  font-variant-numeric: tabular-nums;
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* ---------- Conteúdo ---------- */
+.rst-content h1 {
+  font-family: "Space Grotesk", "DM Sans", sans-serif;
+  font-size: 22pt;
+  color: #111827;
+  border-bottom: 2px solid #2563eb;
+  padding-bottom: 3mm;
+  margin: 0 0 8mm;
+  page-break-before: always;
+  break-before: page;
+  page-break-after: avoid;
+}
+
+.pdf-body > section:first-of-type > h1 {
+  page-break-before: avoid;
+  break-before: auto;
+}
+
+.rst-content h2 {
+  font-size: 14pt;
+  margin-top: 10mm;
+  border-top: 1px solid #dce3ec;
+  padding-top: 4mm;
+  page-break-after: avoid;
+}
+
+.rst-content h3 {
+  font-size: 11.5pt;
+  margin-top: 7mm;
+  page-break-after: avoid;
+}
+
+.rst-content p,
+.rst-content li {
+  font-size: 10.5pt;
+  color: #303a4a;
+}
+
+.rst-content a {
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+img,
+figure,
+table,
+.sd-card,
+.admonition,
+.rst-content figure {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.rst-content img,
+.rst-content figure img,
+.cover-image {
+  max-width: 100% !important;
+  max-height: 110mm !important;
+  width: auto !important;
+  object-fit: contain !important;
+  box-shadow: none !important;
+  border: 1px solid #e2e8f0;
+}
+
+.rst-content figcaption {
+  font-size: 8.5pt;
+  color: #64748b;
+}
+
+.rst-content table.docutils {
+  width: 100%;
+  font-size: 9pt;
+  border: 1px solid #dce3ec;
+}
+
+.rst-content table.docutils thead th,
+.rst-content table.docutils thead th p,
+.rst-content table.docutils thead th * {
+  background: #111827 !important;
+  color: #ffffff !important;
+}
+
+.rst-content table.docutils tbody tr:nth-child(2n) td,
+.rst-content table.docutils tbody tr:nth-child(2n) td p {
+  background: #f1f5f9 !important;
+}
+
+.rst-content table.docutils td,
+.rst-content table.docutils th {
+  padding: 2mm 3mm;
+  white-space: normal !important;
+}
+
+.admonition,
+.result-callout {
+  border: 1px solid #dce3ec !important;
+  border-left: 4px solid #2563eb !important;
+  background: #f8fafc !important;
+  box-shadow: none !important;
+  padding: 4mm 5mm !important;
+  color: #1f2937 !important;
+}
+
+.result-callout .admonition-title,
+.result-callout p,
+.admonition p {
+  color: #1f2937 !important;
+  background: transparent !important;
+}
+
+.admonition-title {
+  font-weight: 700;
+  color: #111827 !important;
+}
+
+.sd-card {
+  border: 1px solid #dce3ec !important;
+  box-shadow: none !important;
+}
+
+/* Vídeos incorporados não existem no papel: substituídos por um aviso. */
+.video-frame {
+  display: none !important;
+}
+
+.pdf-link-note {
+  font-size: 9pt;
+  color: #64748b;
+  border-left: 3px solid #2563eb;
+  padding-left: 3mm;
+  margin: 4mm 0;
+}

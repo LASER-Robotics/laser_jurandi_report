@@ -12,7 +12,12 @@ BUILDDIR      = build
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile
+# Gera o relatório completo em PDF dentro de build/html/_static.
+pdf:
+	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(BUILDDIR)/html" $(SPHINXOPTS) $(O)
+	@python tools/build_pdf.py --html "$(BUILDDIR)/html" --output "$(BUILDDIR)/html/_static/relatorio-jurandi.pdf"
+
+.PHONY: help pdf Makefile
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).

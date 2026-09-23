@@ -19,6 +19,8 @@ html_favicon = "_static/favicon.png"
 html_baseurl = "https://laser-robotics.github.io/laser_jurandi_report/"
 html_show_sourcelink = False
 html_show_sphinx = False
+# Nome do PDF gerado por tools/build_pdf.py e usado pelo botão de download.
+html_context = {"pdf_filename": "relatorio-jurandi.pdf"}
 html_title = "Projeto Jurandi — Relatório Técnico"
 html_meta = {
     "description": "Relatório técnico do veículo de superfície autônomo Jurandi, desenvolvido na UFPB.",

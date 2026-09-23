@@ -9,7 +9,26 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
 {% endblock %}
+{% block sidebartitle %}
+  {{ super() }}
+  <a class="pdf-download pdf-download--side"
+     href="{{ pathto('_static/' + (pdf_filename | default('relatorio-jurandi.pdf')), 1) }}"
+     download>
+    <span class="pdf-download__icon" aria-hidden="true">⭳</span>
+    <span>Download Report PDF</span>
+  </a>
+{% endblock %}
 {% block body %}
   <a class="skip-link" href="#documentacao">Pular para o conteúdo</a>
   {{ super() }}
+{% endblock %}
+{% block footer %}
+  {{ super() }}
+  <a class="pdf-download pdf-download--float"
+     href="{{ pathto('_static/' + (pdf_filename | default('relatorio-jurandi.pdf')), 1) }}"
+     download
+     title="Baixar o relatório completo em PDF">
+    <span class="pdf-download__icon" aria-hidden="true">⭳</span>
+    <span>Download Report PDF</span>
+  </a>
 {% endblock %}
