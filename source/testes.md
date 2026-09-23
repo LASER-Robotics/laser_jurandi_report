@@ -1,5 +1,7 @@
 # Metodologia de Testes
 
+<div class="video-frame"><iframe src="https://www.youtube.com/embed/P51nGnu7A6k" title="Teste de Resgate do Jurandi" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+
 Os testes foram organizados em bancada e em campo para reduzir riscos e verificar progressivamente cada subsistema.
 
 ## Testes de bancada
